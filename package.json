@@ -1,0 +1,29 @@
+{
+  "name": "swifttix-api",
+  "version": "1.0.0",
+  "description": "Backend for SwiftTix application",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "server": "nodemon",
+    "test": "npm run test\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[x\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b[3~\u001b\u001b[3~\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b[C\u001b"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JustinAndrade/SwiftTix-API.git"
+  },
+  "author": "Justin Andrade",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JustinAndrade/SwiftTix-API/issues"
+  },
+  "homepage": "https://github.com/JustinAndrade/SwiftTix-API#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "helmet": "^3.22.0",
+    "knex": "^0.21.1",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.3"
+  }
+}
