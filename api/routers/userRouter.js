@@ -30,14 +30,18 @@ router.put("/:id", async (req, res) => {
     const user = await editUser(id, changes);
     res.status(200).json(user);
   } else {
-    res.status(404).json({ messsage: "Error updating changes" });
+    res.status(404).json({ messsage: "Error updating user" });
   }
 });
 
 router.delete("/:id", async (req, res) => {
   const { id } = req.params;
   const user = await delUser(id);
-  res.status(200).json(user);
+  if (user > 0) {
+    res.status(200).json(user);
+  } else {
+    res.status(404).json({ message: "Error deleting user" });
+  }
 });
 
 module.exports = router;
