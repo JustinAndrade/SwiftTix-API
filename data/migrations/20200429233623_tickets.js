@@ -10,6 +10,13 @@ exports.up = async function (knex) {
     tbl.integer("created_by").references("id").inTable("user");
   });
 
+  await knex.schema.createTable("comments", (tbl) => {
+    tbl.increments("id");
+    tbl.integer("ticket_id").references("id").inTable("ticket");
+    tbl.integer("user_id").references("id").inTable("user");
+    tbl.string("message", 512).notNullable();
+  });
+
   await knex.schema.createTable("assigned", (tbl) => {
     tbl.integer("ticket_id").references("id").inTable("ticket");
     tbl.integer("user_id").references("id").inTable("user");
@@ -18,5 +25,6 @@ exports.up = async function (knex) {
 
 exports.down = async function (knex) {
   await knex.schema.dropTableIfExists("ticket");
+  await knex.schema.dropTableIfExists("comments");
   await knex.schema.dropTableIfExists("assigned");
 };
