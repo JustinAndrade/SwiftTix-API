@@ -1,22 +1,33 @@
 const db = require("../../data/dbConfig");
+const TICKETS = "TICKETS";
 
 // Read
 const getTickets = () => {
-  return db("user");
+  return db(TICKETS);
+};
+
+const getTicketById = (id) => {
+  return db(TICKETS);
 };
 
 // Add
-const addTicket = (Ticket) => {
-  return db("ticket").insert(Ticket);
+const addTicket = (ticket) => {
+  return db(TICKETS).insert(ticket);
 };
 
 // Update
 const editTicket = (id, changes) => {
-  return db("ticket").where({ id }).update(changes);
+  return db(TICKETS).where({ id }).update(changes);
 };
 
 // Delete
 const delTicket = (id) => {
-  return db("ticket").where({ id }).del();
+  return db(TICKETS).where({ id }).del();
 };
-module.exports = { getTickets, addTicket, editTicket, delTicket };
+module.exports = {
+  getTickets,
+  getTicketById,
+  addTicket,
+  editTicket,
+  delTicket,
+};
