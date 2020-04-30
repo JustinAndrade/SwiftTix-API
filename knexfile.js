@@ -6,11 +6,11 @@ module.exports = {
     },
     useNullAsDefault: true,
     migrations: {
-      directory: "./server/data/migrations",
+      directory: "./data/migrations",
       tableName: "dbMigrations",
     },
     seeds: {
-      directory: "./server/data/seeds",
+      directory: "./data/seeds",
     },
   },
 };
