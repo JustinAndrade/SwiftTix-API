@@ -1,10 +1,28 @@
 const router = require("express").Router();
 
-const { getTickets, addTicket, editTicket, delTicket } = require("../helpers");
+const {
+  getTickets,
+  getTicketById,
+  getCommentsById,
+  addTicket,
+  editTicket,
+  delTicket,
+} = require("../helpers");
 
+// Get All Tickets
 router.get("/", async (req, res) => {
   const tickets = await getTickets();
   res.status(200).json({ tickets: tickets });
+});
+
+// Get Ticket By Id
+router.get("/:id", async (req, res) => {
+  const { id } = req.params;
+  const tickets = {
+    ticket: await getTicketById(id),
+    comments: await getCommentsById(id),
+  };
+  res.status(200).json(tickets);
 });
 
 router.post("/create_ticket", (req, res) => {

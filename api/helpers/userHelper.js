@@ -1,4 +1,6 @@
 const db = require("../../data/dbConfig");
+const TICKETS = "TICKETS";
+const COMMENTS = "COMMENTS";
 const USERS = "USERS";
 
 // Read

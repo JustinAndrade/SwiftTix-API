@@ -1,10 +1,10 @@
 exports.seed = function (knex) {
   // Deletes ALL existing entries
-  return knex("ticket")
+  return knex("TICKETS")
     .del()
     .then(function () {
       // Inserts seed entries
-      return knex("ticket").insert([
+      return knex("TICKETS").insert([
         {
           id: 1,
           title: "Unable to access email",

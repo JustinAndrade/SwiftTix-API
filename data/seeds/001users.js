@@ -1,13 +1,13 @@
 exports.seed = function (knex) {
   // Deletes ALL existing entries
-  return knex("user")
+  return knex("USERS")
     .del()
     .then(function () {
       // Inserts seed entries
-      return knex("user").insert([
+      return knex("USERS").insert([
         {
           id: 1,
-          username: "justin_andrade",
+          username: "justin",
           password: "password",
           first_name: "Justin",
           last_name: "Andrade",
@@ -15,19 +15,19 @@ exports.seed = function (knex) {
         },
         {
           id: 2,
-          username: "luis_hernandez",
+          username: "bob",
           password: "password",
-          first_name: "Luis",
-          last_name: "Hernandez",
-          email: "l.hernandez@lambdaschool.com",
+          first_name: "Bob",
+          last_name: "Marley",
+          email: "bobmarley@gmail.com",
         },
         {
           id: 3,
-          username: "gannon_darcy",
+          username: "joe",
           password: "password",
-          first_name: "Gannon",
-          last_name: "Darcy",
-          email: "g.darcy@gmail.com",
+          first_name: "Joe",
+          last_name: "Dirt",
+          email: "joedirt@gmail.com",
         },
       ]);
     });
