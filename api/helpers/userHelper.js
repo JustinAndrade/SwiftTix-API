@@ -12,7 +12,7 @@ const addUser = (user) => {
 
 // Update
 const editUser = (id, changes) => {
-  return db("user").where({ id }).update(changes, "*");
+  return db("user").where({ id }).update(changes);
 };
 
 // Delete

@@ -23,4 +23,11 @@ router.post("/create_user", (req, res) => {
     });
 });
 
+router.put("/:id", async (req, res) => {
+  const { id } = req.params;
+  const changes = req.body;
+  const user = await editUser(id, changes);
+  res.status(200).json(user);
+});
+
 module.exports = router;
