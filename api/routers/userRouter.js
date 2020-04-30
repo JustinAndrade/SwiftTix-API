@@ -26,7 +26,17 @@ router.post("/create_user", (req, res) => {
 router.put("/:id", async (req, res) => {
   const { id } = req.params;
   const changes = req.body;
-  const user = await editUser(id, changes);
+  if (changes) {
+    const user = await editUser(id, changes);
+    res.status(200).json(user);
+  } else {
+    res.status(404).json({ messsage: "Error updating changes" });
+  }
+});
+
+router.delete("/:id", async (req, res) => {
+  const { id } = req.params;
+  const user = await delUser(id);
   res.status(200).json(user);
 });
 
