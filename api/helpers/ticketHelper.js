@@ -2,10 +2,25 @@ const db = require("../../data/dbConfig");
 const TICKETS = "TICKETS";
 const COMMENTS = "COMMENTS";
 const USERS = "USERS";
+const ASSIGNED = "ASSIGNED";
 
 // Read
 const getTickets = () => {
-  return db(TICKETS);
+  return db(TICKETS)
+    .select(
+      "TICKETS.id",
+      "TICKETS.title",
+      "TICKETS.priority",
+      "TICKETS.description",
+      "TICKETS.age",
+      "TICKETS.progress",
+      "TICKETS.status",
+      "USERS.username as created_by",
+      "USERS.email as created_by_email",
+      "ASSIGNED.user_id"
+    )
+    .innerJoin("USERS", "TICKETS.created_by", "USERS.id")
+    .innerJoin("ASSIGNED", "TICKETS.id", "ASSIGNED.ticket_id");
 };
 
 const getTicketById = async (id) => {
