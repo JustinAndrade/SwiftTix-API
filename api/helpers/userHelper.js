@@ -8,6 +8,10 @@ const getUsers = () => {
   return db(USERS);
 };
 
+const getUserById = (filter) => {
+  return db(USERS).where(filter);
+};
+
 // Add
 const addUser = (user) => {
   return db(USERS).insert(user);
@@ -23,4 +27,4 @@ const delUser = (id) => {
   return db(USERS).where({ id }).del();
 };
 
-module.exports = { getUsers, addUser, editUser, delUser };
+module.exports = { getUsers, getUserById, addUser, editUser, delUser };

@@ -7,22 +7,6 @@ router.get("/", async (req, res) => {
   res.status(200).json({ users: users });
 });
 
-router.post("/create_user", (req, res) => {
-  const user = req.body;
-
-  addUser(user)
-    .then((newUser) => {
-      if (newUser) {
-        res.status(201).json(newUser);
-      } else {
-        res.status(404).json({ message: "Error creating user" });
-      }
-    })
-    .catch((err) => {
-      res.status(500).json(err);
-    });
-});
-
 router.put("/:id", async (req, res) => {
   const { id } = req.params;
   const changes = req.body;
